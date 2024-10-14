@@ -40,7 +40,7 @@ const emptyProduct: Product = {
     ProductFormComponent,
     CommonModule,
     StarRatingModule,
-    EtatStockPipe,
+    EtatStockPipe
   ],
   providers: [StarRatingConfigService],
 })
