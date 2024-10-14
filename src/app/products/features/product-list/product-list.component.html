@@ -17,6 +17,7 @@
                 <img [src]="product.image"  [alt]="product.image"/>
                 <ng-template pTemplate="footer">
                     <div class="flex gap-3 mt-1">
+                        <p-button label="Ajouter au panier" severity="primary" (onClick)="onAdd(product)"/>
                         <p-button label="Modifier" severity="secondary" (onClick)="onUpdate(product)"/>
                         <p-button label="Supprimer" severity="danger" (onClick)="onDelete(product)" />
                     </div>
