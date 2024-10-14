@@ -1,11 +1,14 @@
+import { CommonModule } from "@angular/common";
 import { Component, OnInit, inject, signal } from "@angular/core";
 import { Product } from "app/products/data-access/product.model";
 import { ProductsService } from "app/products/data-access/products.service";
 import { ProductFormComponent } from "app/products/ui/product-form/product-form.component";
 import { ButtonModule } from "primeng/button";
 import { CardModule } from "primeng/card";
-import { DataViewModule } from 'primeng/dataview';
-import { DialogModule } from 'primeng/dialog';
+import { DataViewModule } from "primeng/dataview";
+import { DialogModule } from "primeng/dialog";
+import { StarRatingConfigService, StarRatingModule } from "angular-star-rating";
+import { EtatStockPipe } from "app/pipes/etat-stock.pipe";
 
 const emptyProduct: Product = {
   id: 0,
@@ -29,7 +32,17 @@ const emptyProduct: Product = {
   templateUrl: "./product-list.component.html",
   styleUrls: ["./product-list.component.scss"],
   standalone: true,
-  imports: [DataViewModule, CardModule, ButtonModule, DialogModule, ProductFormComponent],
+  imports: [
+    DataViewModule,
+    CardModule,
+    ButtonModule,
+    DialogModule,
+    ProductFormComponent,
+    CommonModule,
+    StarRatingModule,
+    EtatStockPipe,
+  ],
+  providers: [StarRatingConfigService],
 })
 export class ProductListComponent implements OnInit {
   private readonly productsService = inject(ProductsService);
