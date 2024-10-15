@@ -6,8 +6,9 @@
         {{ title }}
     </div>
     <div class="p-toolbar-group-end">
-        <i class="pi pi-shopping-cart" style="font-size: 2rem"></i>
-        <div>{{panierService.getCartSize()}}</div>
+        <button mat-icon-button>
+            <mat-icon class="pi pi-shopping-cart" [matBadge]="panierService.getCartSize()" matBadgeColor="warn" style="font-size: 2rem"/>
+        </button>
     </div>
 </p-toolbar>
 <p-splitter 
