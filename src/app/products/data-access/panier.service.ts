@@ -14,4 +14,8 @@ export class PanierService {
   public getCartSize(): number {
     return this._products.length;
   }
+
+  public getProducts(): Product[] {
+    return this._products;
+  }
 }

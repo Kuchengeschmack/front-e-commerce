@@ -7,6 +7,10 @@ import { SplitterModule } from "primeng/splitter";
 import { ToolbarModule } from "primeng/toolbar";
 import { PanierService } from "./products/data-access/panier.service";
 import { PanelMenuComponent } from "./shared/ui/panel-menu/panel-menu.component";
+import { DialogModule } from "primeng/dialog";
+import { ButtonModule } from "primeng/button";
+import { TableModule } from 'primeng/table';
+import { CurrencyPipe } from "@angular/common";
 
 @Component({
   selector: "app-root",
@@ -21,6 +25,10 @@ import { PanelMenuComponent } from "./shared/ui/panel-menu/panel-menu.component"
     MatBadgeModule,
     MatButtonModule,
     MatIconModule,
+    DialogModule,
+    ButtonModule,
+    TableModule,
+    CurrencyPipe
   ],
   providers: [
     {
@@ -31,6 +39,12 @@ import { PanelMenuComponent } from "./shared/ui/panel-menu/panel-menu.component"
 })
 export class AppComponent {
   title = "ALTEN SHOP";
+  isDialogVisible = false;
 
   constructor(public panierService: PanierService) {}
+
+  onViewCart()
+  {
+    this.isDialogVisible = true;
+  }
 }
