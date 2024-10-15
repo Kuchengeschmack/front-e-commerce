@@ -8,11 +8,18 @@ export class PanierService {
   private readonly _products: Product[] = [];
 
   public add(product: Product) {
-    this._products.push(product);
+    if (this._products.includes(product)) {
+      this._products[
+        this._products.findIndex((p) => p.id === product.id)
+      ].quantity += 1;
+    } else {
+      product.quantity = 1;
+      this._products.push(product);
+    }
   }
 
   public getCartSize(): number {
-    return this._products.length;
+    return this._products.reduce((acc, v)=> acc + v.quantity, 0);
   }
 
   public getProducts(): Product[] {
