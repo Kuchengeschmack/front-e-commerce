@@ -1,3 +1,6 @@
+<div class="card">
+  <p-messages [(value)]="messages" [enableService]="false" />
+</div>
 <form #form="ngForm" (ngSubmit)="onSave()">
   <div class="form-field">
     <label for="email">E-mail</label>
@@ -11,21 +14,22 @@
     />
   </div>
   <div class="form-field">
-    <label for="message">Votre message</label>
-    <input
+    <label for="message">Votre message ({{ message.length }}/300)</label>
+    <textarea
       pInputText
       type="text"
       id="message"
       name="message"
       [(ngModel)]="message"
+      maxlength="300"
       required
-    />
+    ></textarea>
   </div>
   <div class="flex justify-content-between">
     <p-button
       type="submit"
       [disabled]="!form.valid"
-      label="Enregistrer"
+      label="Envoyer"
       severity="success"
     />
   </div>
