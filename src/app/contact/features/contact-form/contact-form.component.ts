@@ -1,14 +1,6 @@
-import {
-  Component,
-  computed,
-  EventEmitter,
-  input,
-  Output,
-  ViewEncapsulation,
-} from "@angular/core";
+import { Component, ViewEncapsulation } from "@angular/core";
 import { FormsModule } from "@angular/forms";
-import { Product } from "app/products/data-access/product.model";
-import { Message, SelectItem } from "primeng/api";
+import { Message } from "primeng/api";
 import { ButtonModule } from "primeng/button";
 import { DropdownModule } from "primeng/dropdown";
 import { InputNumberModule } from "primeng/inputnumber";
