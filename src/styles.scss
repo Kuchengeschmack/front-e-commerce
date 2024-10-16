@@ -9,6 +9,9 @@
 /* Custom SCSS */
 @import "variables";
 
+/* Angular Start Rating */
+@import '~css-star-rating/css/star-rating.min.css';
+
 /* Main styles */
 html,
 body {
@@ -78,3 +81,5 @@ body {
   height: 14px !important;
   color: transparent;
 }
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
