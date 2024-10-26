@@ -1,18 +1,12 @@
 import { Component, LOCALE_ID } from "@angular/core";
-import { MatBadgeModule } from "@angular/material/badge";
-import { MatButtonModule } from "@angular/material/button";
-import { MatIconModule } from "@angular/material/icon";
 import { RouterModule } from "@angular/router";
+import { BadgeModule } from 'primeng/badge';
+import { ButtonModule } from "primeng/button";
 import { SplitterModule } from "primeng/splitter";
 import { ToolbarModule } from "primeng/toolbar";
 import { CartService } from "./cart/data-access/cart.service";
-import { PanelMenuComponent } from "./shared/ui/panel-menu/panel-menu.component";
-import { DialogModule } from "primeng/dialog";
-import { ButtonModule } from "primeng/button";
-import { TableModule } from 'primeng/table';
-import { CurrencyPipe } from "@angular/common";
-import { Product } from "./products/data-access/product.model";
 import { CartModalComponent } from "./cart/features/cart-modal/cart-modal.component";
+import { PanelMenuComponent } from "./shared/ui/panel-menu/panel-menu.component";
 
 @Component({
   selector: "app-root",
@@ -24,13 +18,8 @@ import { CartModalComponent } from "./cart/features/cart-modal/cart-modal.compon
     SplitterModule,
     ToolbarModule,
     PanelMenuComponent,
-    MatBadgeModule,
-    MatButtonModule,
-    MatIconModule,
-    DialogModule,//
     ButtonModule,
-    TableModule,//
-    CurrencyPipe,//
+    BadgeModule,
     CartModalComponent
   ],
   providers: [
