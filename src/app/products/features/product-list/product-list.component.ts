@@ -58,7 +58,7 @@ export class ProductListComponent implements OnInit {
     this.productsService.get().subscribe();
   }
 
-  constructor(private _panierService: PanierService) {}
+  constructor(public panierService: PanierService) { }
 
   public onCreate() {
     this.isCreation = true;
@@ -86,7 +86,7 @@ export class ProductListComponent implements OnInit {
   }
 
   public onAdd(product: Product) {
-    this._panierService.add(product);
+    this.panierService.add(product);
   }
 
   public onCancel() {
