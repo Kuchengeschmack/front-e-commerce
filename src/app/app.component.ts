@@ -1,4 +1,4 @@
-import { Component, LOCALE_ID } from "@angular/core";
+import { Component, inject, LOCALE_ID } from "@angular/core";
 import { RouterModule } from "@angular/router";
 import { BadgeModule } from 'primeng/badge';
 import { ButtonModule } from "primeng/button";
@@ -30,10 +30,9 @@ import { PanelMenuComponent } from "./shared/ui/panel-menu/panel-menu.component"
   ],
 })
 export class AppComponent {
+  public cartService = inject(CartService);
   title = "ALTEN SHOP";
   isDialogVisible = false;
-
-  constructor(public cartService: CartService) { }
 
   onViewCart() {
     this.isDialogVisible = true;

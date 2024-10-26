@@ -2,6 +2,7 @@ import { CurrencyPipe } from "@angular/common";
 import {
     Component,
     EventEmitter,
+    inject,
     Input,
     Output
 } from "@angular/core";
@@ -23,10 +24,9 @@ import { TableModule } from "primeng/table";
     ]
 })
 export class CartModalComponent {
+    public cartService = inject(CartService);
     @Input() isDialogVisible: boolean = false;
     @Output() isDialogVisibleChange = new EventEmitter<boolean>();
-
-    constructor(public cartService: CartService) { }
 
     onRemove(product: Product) {
         this.cartService.remove(product);
