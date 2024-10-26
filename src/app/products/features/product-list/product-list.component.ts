@@ -2,7 +2,7 @@ import { CommonModule } from "@angular/common";
 import { Component, OnInit, inject, signal } from "@angular/core";
 import { StarRatingConfigService, StarRatingModule } from "angular-star-rating";
 import { EtatStockPipe } from "app/shared/pipes/etat-stock.pipe";
-import { CartService } from "app/products/data-access/cart.service";
+import { CartService } from "app/cart/data-access/cart.service";
 import { Product } from "app/products/data-access/product.model";
 import { ProductsService } from "app/products/data-access/products.service";
 import { ProductFormComponent } from "app/products/ui/product-form/product-form.component";

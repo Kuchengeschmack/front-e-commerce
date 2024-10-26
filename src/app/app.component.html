@@ -23,7 +23,7 @@
     </ng-template>
 </p-splitter>
 
-<p-dialog [(visible)]="isDialogVisible" [style]="{ width: '50vw' }" modal="true" header="Liste des produits du panier">
+<!-- <p-dialog [(visible)]="isDialogVisible" [style]="{ width: '50vw' }" modal="true" header="Liste des produits du panier">
     @if(cartService.getCartSize() > 0){
     <p-table [value]="cartService.getProducts()">
         <ng-template pTemplate="header">
@@ -50,4 +50,6 @@
     } @else {
     <span class="p-text-secondary block mb-5">Aucun article présent dans le panier.</span>
     }
-</p-dialog>
+</p-dialog> -->
+
+<app-cart-modal [(isDialogVisible)]="isDialogVisible"></app-cart-modal>
