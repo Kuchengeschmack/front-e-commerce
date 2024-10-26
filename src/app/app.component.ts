@@ -5,7 +5,7 @@ import { MatIconModule } from "@angular/material/icon";
 import { RouterModule } from "@angular/router";
 import { SplitterModule } from "primeng/splitter";
 import { ToolbarModule } from "primeng/toolbar";
-import { PanierService } from "./products/data-access/panier.service";
+import { CartService } from "./products/data-access/cart.service";
 import { PanelMenuComponent } from "./shared/ui/panel-menu/panel-menu.component";
 import { DialogModule } from "primeng/dialog";
 import { ButtonModule } from "primeng/button";
@@ -42,13 +42,13 @@ export class AppComponent {
   title = "ALTEN SHOP";
   isDialogVisible = false;
 
-  constructor(public panierService: PanierService) { }
+  constructor(public cartService: CartService) { }
 
   onViewCart() {
     this.isDialogVisible = true;
   }
 
   onRemove(product: Product) {
-    this.panierService.remove(product);
+    this.cartService.remove(product);
   }
 }

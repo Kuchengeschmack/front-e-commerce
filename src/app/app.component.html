@@ -6,7 +6,7 @@
         {{ title }}
     </div>
     <div class="p-toolbar-group-end">
-        <p-button (onClick)="onViewCart()" [matBadge]="panierService.getCartSize()" matBadgeColor="warn"
+        <p-button (onClick)="onViewCart()" [matBadge]="cartService.getCartSize()" matBadgeColor="warn"
             icon="pi pi-shopping-cart" rounded="true" text="true" />
     </div>
 </p-toolbar>
@@ -24,8 +24,8 @@
 </p-splitter>
 
 <p-dialog [(visible)]="isDialogVisible" [style]="{ width: '50vw' }" modal="true" header="Liste des produits du panier">
-    @if(panierService.getCartSize() > 0){
-    <p-table [value]="panierService.getProducts()">
+    @if(cartService.getCartSize() > 0){
+    <p-table [value]="cartService.getProducts()">
         <ng-template pTemplate="header">
             <tr>
                 <th>Nom</th>
