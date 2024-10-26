@@ -1,8 +1,8 @@
 import { CommonModule } from "@angular/common";
 import { Component, OnInit, inject, signal } from "@angular/core";
 import { StarRatingConfigService, StarRatingModule } from "angular-star-rating";
-import { EtatStockPipe } from "app/pipes/etat-stock.pipe";
-import { PanierService } from "app/products/data-access/panier.service";
+import { EtatStockPipe } from "app/shared/pipes/etat-stock.pipe";
+import { CartService } from "app/cart/data-access/cart.service";
 import { Product } from "app/products/data-access/product.model";
 import { ProductsService } from "app/products/data-access/products.service";
 import { ProductFormComponent } from "app/products/ui/product-form/product-form.component";
@@ -58,7 +58,7 @@ export class ProductListComponent implements OnInit {
     this.productsService.get().subscribe();
   }
 
-  constructor(private _panierService: PanierService) {}
+  constructor(public cartService: CartService) { }
 
   public onCreate() {
     this.isCreation = true;
@@ -86,7 +86,7 @@ export class ProductListComponent implements OnInit {
   }
 
   public onAdd(product: Product) {
-    this._panierService.add(product);
+    this.cartService.add(product);
   }
 
   public onCancel() {
