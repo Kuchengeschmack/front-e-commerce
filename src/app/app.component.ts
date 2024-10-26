@@ -5,13 +5,14 @@ import { MatIconModule } from "@angular/material/icon";
 import { RouterModule } from "@angular/router";
 import { SplitterModule } from "primeng/splitter";
 import { ToolbarModule } from "primeng/toolbar";
-import { PanierService } from "./products/data-access/panier.service";
+import { CartService } from "./cart/data-access/cart.service";
 import { PanelMenuComponent } from "./shared/ui/panel-menu/panel-menu.component";
 import { DialogModule } from "primeng/dialog";
 import { ButtonModule } from "primeng/button";
 import { TableModule } from 'primeng/table';
 import { CurrencyPipe } from "@angular/common";
 import { Product } from "./products/data-access/product.model";
+import { CartModalComponent } from "./cart/features/cart-modal/cart-modal.component";
 
 @Component({
   selector: "app-root",
@@ -26,10 +27,11 @@ import { Product } from "./products/data-access/product.model";
     MatBadgeModule,
     MatButtonModule,
     MatIconModule,
-    DialogModule,
+    DialogModule,//
     ButtonModule,
-    TableModule,
-    CurrencyPipe
+    TableModule,//
+    CurrencyPipe,//
+    CartModalComponent
   ],
   providers: [
     {
@@ -42,13 +44,9 @@ export class AppComponent {
   title = "ALTEN SHOP";
   isDialogVisible = false;
 
-  constructor(public panierService: PanierService) { }
+  constructor(public cartService: CartService) { }
 
   onViewCart() {
     this.isDialogVisible = true;
-  }
-
-  onRemove(product: Product) {
-    this.panierService.remove(product);
   }
 }
