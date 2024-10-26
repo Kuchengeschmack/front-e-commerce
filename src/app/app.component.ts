@@ -11,6 +11,7 @@ import { DialogModule } from "primeng/dialog";
 import { ButtonModule } from "primeng/button";
 import { TableModule } from 'primeng/table';
 import { CurrencyPipe } from "@angular/common";
+import { Product } from "./products/data-access/product.model";
 
 @Component({
   selector: "app-root",
@@ -41,10 +42,13 @@ export class AppComponent {
   title = "ALTEN SHOP";
   isDialogVisible = false;
 
-  constructor(public panierService: PanierService) {}
+  constructor(public panierService: PanierService) { }
 
-  onViewCart()
-  {
+  onViewCart() {
     this.isDialogVisible = true;
+  }
+
+  onRemove(product: Product) {
+    this.panierService.remove(product);
   }
 }

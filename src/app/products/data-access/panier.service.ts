@@ -18,8 +18,22 @@ export class PanierService {
     }
   }
 
+  public remove(product: Product) {
+    if (this._products[
+      this._products.findIndex((p) => p.id === product.id)
+    ].quantity > 1) {
+      this._products[
+        this._products.findIndex((p) => p.id === product.id)
+      ].quantity -= 1;
+    } else {
+      this._products.splice(this._products.findIndex((p) => p.id === product.id)
+        , 1);
+    }
+
+  }
+
   public getCartSize(): number {
-    return this._products.reduce((acc, v)=> acc + v.quantity, 0);
+    return this._products.reduce((acc, v) => acc + v.quantity, 0);
   }
 
   public getProducts(): Product[] {
