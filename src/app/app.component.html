@@ -23,33 +23,4 @@
     </ng-template>
 </p-splitter>
 
-<!-- <p-dialog [(visible)]="isDialogVisible" [style]="{ width: '50vw' }" modal="true" header="Liste des produits du panier">
-    @if(cartService.getCartSize() > 0){
-    <p-table [value]="cartService.getProducts()">
-        <ng-template pTemplate="header">
-            <tr>
-                <th>Nom</th>
-                <th>Catégorie</th>
-                <th>Prix unitaire</th>
-                <th>Quantité</th>
-                <th></th>
-            </tr>
-        </ng-template>
-        <ng-template pTemplate="body" let-product>
-            <tr>
-                <td>{{ product.name }}</td>
-                <td>{{ product.category }}</td>
-                <td>{{ product.price | currency:'EUR' }}</td>
-                <td>{{ product.quantity }}</td>
-                <td>
-                    <button type="button" pButton pRipple icon="pi pi-minus" (click)="onRemove(product)"></button>
-                </td>
-            </tr>
-        </ng-template>
-    </p-table>
-    } @else {
-    <span class="p-text-secondary block mb-5">Aucun article présent dans le panier.</span>
-    }
-</p-dialog> -->
-
 <app-cart-modal [(isDialogVisible)]="isDialogVisible"></app-cart-modal>
