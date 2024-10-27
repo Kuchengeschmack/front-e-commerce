@@ -9,6 +9,8 @@ import { catchError, Observable, of, tap } from "rxjs";
 export class ProductsService {
   private readonly http = inject(HttpClient);
   private readonly path = "/api/products";
+  public static readonly imagePath =
+    "https://primefaces.org/cdn/primeng/images/demo/product/";
 
   private readonly _products = signal<Product[]>([]);
 

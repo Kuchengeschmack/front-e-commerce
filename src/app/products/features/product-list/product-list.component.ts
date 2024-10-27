@@ -48,6 +48,7 @@ const emptyProduct: Product = {
 export class ProductListComponent implements OnInit {
   private readonly productsService = inject(ProductsService);
   public cartService = inject(CartService);
+  public readonly imagePath = ProductsService.imagePath;
 
   public readonly products = this.productsService.products;
 
