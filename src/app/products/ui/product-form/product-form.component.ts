@@ -13,7 +13,7 @@ import { ButtonModule } from "primeng/button";
 import { DropdownModule } from "primeng/dropdown";
 import { InputNumberModule } from "primeng/inputnumber";
 import { InputTextModule } from "primeng/inputtext";
-import { InputTextareaModule } from 'primeng/inputtextarea';
+import { InputTextareaModule } from "primeng/inputtextarea";
 
 @Component({
   selector: "app-product-form",
@@ -71,7 +71,7 @@ import { InputTextareaModule } from 'primeng/inputtextarea';
     InputTextareaModule,
     DropdownModule,
   ],
-  encapsulation: ViewEncapsulation.None
+  encapsulation: ViewEncapsulation.None,
 })
 export class ProductFormComponent {
   public readonly product = input.required<Product>();

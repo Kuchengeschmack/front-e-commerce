@@ -1,6 +1,6 @@
 import { Component, inject, LOCALE_ID } from "@angular/core";
 import { RouterModule } from "@angular/router";
-import { BadgeModule } from 'primeng/badge';
+import { BadgeModule } from "primeng/badge";
 import { ButtonModule } from "primeng/button";
 import { SplitterModule } from "primeng/splitter";
 import { ToolbarModule } from "primeng/toolbar";
@@ -20,7 +20,7 @@ import { PanelMenuComponent } from "./shared/ui/panel-menu/panel-menu.component"
     PanelMenuComponent,
     ButtonModule,
     BadgeModule,
-    CartModalComponent
+    CartModalComponent,
   ],
   providers: [
     {
