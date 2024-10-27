@@ -6,8 +6,9 @@
         {{ title }}
     </div>
     <div class="p-toolbar-group-end">
-        <p-button (onClick)="onViewCart()" [matBadge]="cartService.getCartSize()" matBadgeColor="warn"
-            icon="pi pi-shopping-cart" rounded="true" text="true" />
+        <p-button (onClick)="onViewCart()" [badge]="cartService.getCartSize().toString()" icon="pi pi-shopping-cart"
+            rounded="true" text="true">
+        </p-button>
     </div>
 </p-toolbar>
 <p-splitter [panelSizes]="[20, 80]" [style]="{ height: 'calc(100vh - 100px)' }">

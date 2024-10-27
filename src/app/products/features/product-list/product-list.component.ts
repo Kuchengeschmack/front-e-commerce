@@ -47,6 +47,8 @@ const emptyProduct: Product = {
 })
 export class ProductListComponent implements OnInit {
   private readonly productsService = inject(ProductsService);
+  public cartService = inject(CartService);
+  public readonly imagePath = ProductsService.imagePath;
 
   public readonly products = this.productsService.products;
 
@@ -57,8 +59,6 @@ export class ProductListComponent implements OnInit {
   ngOnInit() {
     this.productsService.get().subscribe();
   }
-
-  constructor(public cartService: CartService) { }
 
   public onCreate() {
     this.isCreation = true;
