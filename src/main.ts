@@ -14,7 +14,7 @@ import { ConfirmationService, MessageService } from "primeng/api";
 import { DialogService } from "primeng/dynamicdialog";
 import { AppComponent } from "./app/app.component";
 import { environment } from "./environments/environment";
-import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
+import { provideAnimationsAsync } from "@angular/platform-browser/animations/async";
 
 if (environment.production) {
   enableProdMode();
@@ -23,14 +23,13 @@ if (environment.production) {
 bootstrapApplication(AppComponent, {
   providers: [
     importProvidersFrom(BrowserModule),
-    provideHttpClient(
-      withInterceptorsFromDi(),
-    ),
+    provideHttpClient(withInterceptorsFromDi()),
     provideAnimations(),
     provideRouter(APP_ROUTES),
     ConfirmationService,
     MessageService,
-    DialogService, provideAnimationsAsync(),
+    DialogService,
+    provideAnimationsAsync(),
   ],
 }).catch((err) => console.log(err));
 

@@ -12,24 +12,29 @@ export class CartService {
     let index = this.getIndex(product);
     if (index < 0) {
       product.quantity = 1;
-      this._cart.update(products => [...products, product]);
+      this._cart.update((products) => [...products, product]);
     } else {
-      this._cart.update(products => {
-        return products.map(p => p.id === product.id ? { ...p, quantity: p.quantity + 1 } : p);
-      })
+      this._cart.update((products) => {
+        return products.map((p) =>
+          p.id === product.id ? { ...p, quantity: p.quantity + 1 } : p,
+        );
+      });
     }
   }
 
   public remove(product: Product) {
     let index = this.getIndex(product);
     if (this._cart()[index].quantity > 1) {
-      this._cart.update(products => {
-        return products.map(p => p.id === product.id ? { ...p, quantity: p.quantity - 1 } : p);
-      })
+      this._cart.update((products) => {
+        return products.map((p) =>
+          p.id === product.id ? { ...p, quantity: p.quantity - 1 } : p,
+        );
+      });
     } else {
-      this._cart.update(products => products.filter(p => p.id !== product.id))
+      this._cart.update((products) =>
+        products.filter((p) => p.id !== product.id),
+      );
     }
-
   }
 
   public getQuantity(product: Product): number {
@@ -41,7 +46,7 @@ export class CartService {
   }
 
   public getIndex(product: Product) {
-    return this._cart().findIndex(p => p.id === product.id);
+    return this._cart().findIndex((p) => p.id === product.id);
   }
 
   public getCartSize(): number {
