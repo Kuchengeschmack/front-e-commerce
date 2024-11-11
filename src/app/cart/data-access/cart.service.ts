@@ -9,7 +9,7 @@ export class CartService {
   public readonly cart = this._cart.asReadonly();
 
   public add(product: Product) {
-    let index = this.getIndex(product);
+    const index = this.getIndex(product);
     if (index < 0) {
       product.quantity = 1;
       this._cart.update((products) => [...products, product]);
@@ -23,7 +23,7 @@ export class CartService {
   }
 
   public remove(product: Product) {
-    let index = this.getIndex(product);
+    const index = this.getIndex(product);
     if (this._cart()[index].quantity > 1) {
       this._cart.update((products) => {
         return products.map((p) =>

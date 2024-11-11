@@ -14,7 +14,7 @@ import { TableModule } from "primeng/table";
 })
 export class CartModalComponent {
   public cartService = inject(CartService);
-  @Input() isDialogVisible: boolean = false;
+  @Input() isDialogVisible = false;
   @Output() isDialogVisibleChange = new EventEmitter<boolean>();
 
   onRemove(product: Product) {
